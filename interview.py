@@ -17,6 +17,8 @@ def isValid(s):
         parenthesis.pop(a)
         parenthesis.pop(b)
 
+    return True
+
 if __name__ == '__main__':
     isValid('(test)')
 
