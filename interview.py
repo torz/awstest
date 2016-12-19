@@ -1,26 +1,20 @@
 
 
 def isValid(s):
-    parenthesis = []
+    parenthesis = 0
     for i in s:
-        if i == '(' or i == ')':
-            parenthesis.append(i)
+        if i == '(':
+            parenthesis += 1
+        if i == ')':
+            parenthesis -= 1
 
-    while len(parenthesis) != 0:
-
-        try:
-            a = parenthesis.index('(')
-            b = parenthesis.index(')')
-        except:
+        if parenthesis < 0:
             return False
 
-        if a > b:
-            return False
-
-        parenthesis.pop(a)
-        parenthesis.pop(b-1)
-
-    return True
+    if parenthesis == 0:
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
     print(isValid('(test)'))
