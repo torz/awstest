@@ -9,18 +9,23 @@ def isValid(s):
     while len(parenthesis) != 0:
 
         a = parenthesis.index('(')
+        print(a)
         b = parenthesis.index(')')
+        print(b)
 
         if a > b:
             return False
 
         parenthesis.pop(a)
-        parenthesis.pop(b)
+        parenthesis.pop(b-1)
 
     return True
 
 if __name__ == '__main__':
-    isValid('(test)')
+    print(isValid('(test)'))
+    print(isValid('((test))'))
+    print(isValid('()test()'))
+    print(isValid(')test('))
 
 
 '''
