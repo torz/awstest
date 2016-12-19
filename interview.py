@@ -9,9 +9,7 @@ def isValid(s):
     while len(parenthesis) != 0:
 
         a = parenthesis.index('(')
-        print(a)
         b = parenthesis.index(')')
-        print(b)
 
         if a > b:
             return False
