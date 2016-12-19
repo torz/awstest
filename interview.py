@@ -8,8 +8,11 @@ def isValid(s):
 
     while len(parenthesis) != 0:
 
-        a = parenthesis.index('(')
-        b = parenthesis.index(')')
+        try:
+            a = parenthesis.index('(')
+            b = parenthesis.index(')')
+        except:
+            return False
 
         if a > b:
             return False
@@ -24,6 +27,7 @@ if __name__ == '__main__':
     print(isValid('((test))'))
     print(isValid('()test()'))
     print(isValid(')test('))
+    print(isValid('(test'))
 
 
 '''
