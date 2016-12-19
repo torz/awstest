@@ -6,13 +6,16 @@ def isValid(s):
         if i == '(' or i == ')':
             parenthesis.append(i)
 
-    for p in parenthesis:
+    while len(parenthesis) != 0:
+
         a = parenthesis.index('(')
         b = parenthesis.index(')')
 
         if a > b:
             return False
 
+        parenthesis.pop(a)
+        parenthesis.pop(b)
 
 if __name__ == '__main__':
     isValid('(test)')
